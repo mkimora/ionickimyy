@@ -1,9 +1,67 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-title>envoiretrait</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form #f="ngForm" (ngSubmit)="onLogin(f.value)" >
+    <!-- Inputs with labels -->
+    <section>
+      <ion-button size="large" (click)="onButtonClick()" color="light">Envoi</ion-button>
+      <ion-button size="large" (click)="offButtonClick()" color="medium">Retrait</ion-button>
+    </section>
+
+    <ion-item>
+        <ion-label position="floating" >client_emetteur</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="client_emetteur" name="client_emetteur"
+        placeholder="">
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label position="floating" >tel_emetteur</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="tel_emetteur" name="tel_emetteur" ngModel
+        placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >nci_emetteur</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="nci_emetteur" name="nci_emetteur" ngModel
+        placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >montant</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="montant" name="montant" ngModel placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >client_recepteur</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="client_recepteur" name="client_recepteur" ngModel
+        placeholder="">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >tel_recepteur</ion-label>
+      <ion-input *ngIf="butonClicked" type="text" id="tel_recepteur" name="tel_recepteur" ngModel
+        placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >code</ion-label>
+        <ion-input *ngIf="buttonClicked" type="text" id="code" name="code" ngModel placeholder=""></ion-input>
+      </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" >nci_recepteur</ion-label>
+      <ion-input *ngIf="buttonClicked" type="text" id="nci_recepteur" name="nci_recepteur" ngModel placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-button color="success" type="submit">Envoyer</ion-button>
+  </form>
+
 
 </ion-content>
+
