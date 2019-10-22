@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Authentification 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form #f="ngForm" (ngSubmit)="onLogin(f.value)" >
+<!-- Inputs with labels -->
+<ion-item>
+  <ion-label position="floating">Username</ion-label>
+  <ion-input  name="username" [(ngModel)]="loginUserData.username"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating" >Password</ion-label>
+  <ion-input name="password" [(ngModel)]="loginUserData.password"></ion-input>
+</ion-item>
+
+<div class="ion-padding">
+  <ion-button expand="block" (click)="loginUser()"  type="submit" class="ion-no-margin">S'authentifier</ion-button>
+</div>
+</form>
+</ion-content>
