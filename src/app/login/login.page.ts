@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
       .subscribe(resp=>{
         let jwt = resp.headers.get('Authorization');
         this._auth.saveToken(jwt);
-        this._router.navigateByUrl("")
+        this._router.navigateByUrl('home')
       },err=>{
 
       })
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
       .subscribe(
         res => {console.log(res)
         localStorage.setItem('token' ,res.token)
-        this._router.navigate(['/login'])
+        this._router.navigateByUrl('home')
       } ,
         err => console.log(err)
       )
